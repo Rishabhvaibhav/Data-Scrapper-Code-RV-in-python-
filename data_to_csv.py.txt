@@ -1,0 +1,27 @@
+import csv
+
+# Data in dictionary format
+data = [
+    {"Name": "K.Gopinath", "Phone": "+917760635365"},
+    {"Name": "Syed Wahid Khan", "Phone": "+918789060901"},
+    {"Name": "Vishwesh Ransing", "Phone": "+918605600241"},
+    {"Name": "Kamal R chauhan", "Phone": "+917021608362"},
+    {"Name": "Hardik Jain", "Phone": "+919310229250"},
+    # Add all the data here...
+]
+
+# CSV file path to be created
+csv_file_path = "android_contacts.csv"
+
+# Write the data to the CSV file
+with open(csv_file_path, mode='w', newline='') as file:
+    writer = csv.writer(file)
+    
+    # Write the header
+    writer.writerow(["Name", "Phone"])
+
+    # Write the rows
+    for contact in data:
+        writer.writerow([contact["Name"], contact["Phone"]])
+
+print("CSV file for Android contacts created successfully.")
